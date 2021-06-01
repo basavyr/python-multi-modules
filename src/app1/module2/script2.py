@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
-# import script1
+try:
+    from app1.module2 import script1
+except ModuleNotFoundError:
+    import script1
+except ImportError:
+    from src.app1.module2 import script1
 import os
+
 
 class Class_Script:
     @staticmethod
@@ -21,6 +27,8 @@ class Class_Script:
 def Main():
     print(
         f'This is the {Main.__name__}() function from {Class_Script.Get_Script_Name()}')
+    print(f'This is called from -> {script1.Class_Script.Get_Script_Name()}')
+    print(f'{script1.Class_Script.Say_Hi()} | This is called from -> {script1.Class_Script.Get_Script_Name()}')
 
 
 if __name__ == '__main__':

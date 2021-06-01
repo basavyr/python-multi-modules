@@ -8,11 +8,15 @@ try:
     sys.path.append('../')
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
+    import src.app1.module2.script1 as script1_m2
+    import src.app1.module2.script2 as script2_m2
     #print('Direct execution of the test')
 except ImportError:
     sys.path.append('src/')
     import app1.module1.script1 as script1
     import app1.module1.script2 as script2
+    import app1.module2.script1 as script1_m2
+    import app1.module2.script2 as script2_m2
     #print('Execution of the script from tests/ dir')
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
@@ -110,6 +114,11 @@ class Test_Module1_Script2:
         Test_Module1_Script2.test_showsysteminfo()
         Test_Module1_Script2.test_giverandomarray()
 
+
+class Test_Module2_Script1:
+    @staticmethod
+    def test_sayhi():
+        x=script2_m2.Class_Script.Say_Hi()
 
 def Main():
     print(f'\n⚙️ Testing Script-1...\n')

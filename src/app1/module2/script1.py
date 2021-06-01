@@ -11,7 +11,7 @@ class Class_Script:
     @staticmethod
     def Say_Hi():
         try:
-            message = f'Hi from {Class_Script.Say_Hi.__name__} from {Class_Script.__name__}'
+            message = f'Hi from {Class_Script.Say_Hi.__name__} from {Class_Script.__name__} within {Class_Script.Get_Script_Name()}'
         except Exception:
             return None
         else:
@@ -19,7 +19,8 @@ class Class_Script:
 
 
 def Main():
-    print(f'This is the {Main.__name__}() function from {Class_Script.Get_Script_Name()}')
+    print(
+        f'This is the {Main.__name__}() function from {Class_Script.Get_Script_Name()}')
 
 
 if __name__ == '__main__':
