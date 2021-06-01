@@ -50,7 +50,6 @@ class Class_Script:
 
 def Main():
     print(f'This is the {Main.__name__}() function from Script-2')
-    print(Class_Script.Give_Random_Array(10))
 
 if __name__ == '__main__':
     Class_Script.Say_Hi()

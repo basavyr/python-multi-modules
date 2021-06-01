@@ -92,6 +92,17 @@ class Test_Module1_Script2:
             print(f'{script2.Class_Script.Show_System_Info.__name__}: Failed ❌')
         else:
             print(f'{script2.Class_Script.Show_System_Info.__name__}: Success ✅')
+    
+    @staticmethod
+    def test_giverandomarray():
+        x=script2.Class_Script.Give_Random_Array(100)
+        try:
+            assert x!=0
+        except AssertionError:
+            print(f'{script2.Class_Script.Give_Random_Array.__name__}: Failed ❌')
+        else:
+            print(f'{script2.Class_Script.Give_Random_Array.__name__}: Success ✅')
+
 
     @staticmethod
     def Start_Test():
