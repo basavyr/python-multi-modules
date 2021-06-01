@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
+# import script1
+import os
 
 class Class_Script:
+    @staticmethod
+    def Get_Script_Name():
+        return os.path.basename(__file__)
+
     @staticmethod
     def Say_Hi():
         try:
@@ -13,4 +19,9 @@ class Class_Script:
 
 
 def Main():
-    print(f'This is the {Main.__name__}() function from Script-2')
+    print(
+        f'This is the {Main.__name__}() function from {Class_Script.Get_Script_Name()}')
+
+
+if __name__ == '__main__':
+    Main()
