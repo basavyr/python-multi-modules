@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 
 
-class Script1:
+class Class_Script:
     @staticmethod
     def Say_Hi():
-        print(f'Hi from {__name__}')
+        try:
+            print(f'Hi from {Class_Script.Say_Hi.__name__} in {Class_Script.__name__}')
+        except Exception:
+            return 0
+        else:
+            return 1
 
 
 def Main():
