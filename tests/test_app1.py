@@ -69,9 +69,9 @@ class Test_Script2:
         try:
             assert x != 0
         except AssertionError:
-            print('Script-2: Failed ❌')
+            print(f'{script2.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print('Script-2: Success ✅')
+            print(f'{script2.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_showlocation():
@@ -79,9 +79,9 @@ class Test_Script2:
         try:
             assert x != 0
         except AssertionError:
-            print('Script-2: Failed ❌')
+            print(f'{script2.Class_Script.Show_Location.__name__}: Failed ❌')
         else:
-            print('Script-2: Success ✅')
+            print(f'{script2.Class_Script.Show_Location.__name__}: Success ✅')
 
     @staticmethod
     def test_showsysteminfo():
@@ -89,9 +89,9 @@ class Test_Script2:
         try:
             assert x != 0
         except AssertionError:
-            print('Script-2: Failed ❌')
+            print(f'{script2.Class_Script.Show_System_Info.__name__}: Failed ❌')
         else:
-            print('Script-2: Success ✅')
+            print(f'{script2.Class_Script.Show_System_Info.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
