@@ -43,7 +43,7 @@ class Class_Script:
             classic_array = [get_random() for _ in range(size)]
             np_array = np.array(classic_array)
         except Exception:
-            return 0
+            return []
         else:
             return np_array
 

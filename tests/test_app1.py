@@ -92,23 +92,23 @@ class Test_Module1_Script2:
             print(f'{script2.Class_Script.Show_System_Info.__name__}: Failed ❌')
         else:
             print(f'{script2.Class_Script.Show_System_Info.__name__}: Success ✅')
-    
+
     @staticmethod
     def test_giverandomarray():
-        x=script2.Class_Script.Give_Random_Array(100)
+        x = script2.Class_Script.Give_Random_Array(0)
         try:
-            assert x!=0
+            assert len(x) > 0
         except AssertionError:
             print(f'{script2.Class_Script.Give_Random_Array.__name__}: Failed ❌')
         else:
             print(f'{script2.Class_Script.Give_Random_Array.__name__}: Success ✅')
-
 
     @staticmethod
     def Start_Test():
         Test_Module1_Script2.test_sayhi()
         Test_Module1_Script2.test_showlocation()
         Test_Module1_Script2.test_showsysteminfo()
+        Test_Module1_Script2.test_giverandomarray()
 
 
 def Main():
