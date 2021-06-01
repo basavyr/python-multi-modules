@@ -18,7 +18,7 @@ finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
 
-class Test_Script1:
+class Test_Module1_Script1:
 
     @staticmethod
     def test_sayhi():
@@ -56,12 +56,12 @@ class Test_Script1:
 
     @staticmethod
     def Start_Test():
-        Test_Script1.test_sayhi()
-        Test_Script1.test_showtime()
-        Test_Script1.test_computeterms()
+        Test_Module1_Script1.test_sayhi()
+        Test_Module1_Script1.test_showtime()
+        Test_Module1_Script1.test_computeterms()
 
 
-class Test_Script2:
+class Test_Module1_Script2:
 
     @staticmethod
     def test_sayhi():
@@ -95,17 +95,17 @@ class Test_Script2:
 
     @staticmethod
     def Start_Test():
-        Test_Script2.test_sayhi()
-        Test_Script2.test_showlocation()
-        Test_Script2.test_showsysteminfo()
+        Test_Module1_Script2.test_sayhi()
+        Test_Module1_Script2.test_showlocation()
+        Test_Module1_Script2.test_showsysteminfo()
 
 
 def Main():
     print(f'\n⚙️ Testing Script-1...\n')
-    Test_Script1.Start_Test()
+    Test_Module1_Script1.Start_Test()
 
     print(f'\n⚙️ Testing Script-2...\n')
-    Test_Script2.Start_Test()
+    Test_Module1_Script2.Start_Test()
 
 
 if __name__ == '__main__':
