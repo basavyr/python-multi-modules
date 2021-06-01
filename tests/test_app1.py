@@ -11,32 +11,40 @@ except ImportError:
     sys.path.append('src/')
     import app1.module1.script1 as script1
 finally:
-    print(f'Finish importing modules from {app}')
+    print(f'\nImporting modules from {app} 📚\n')
 
 
-def test_script1():
-    x = script1.Class_Script.Say_Hi()
-    try:
-        print(f'Testing Script-1')
-        assert type(x) == str
-    except AssertionError:
-        print('Script-1: Failed ❌')
-    else:
-        print('Script-1: Success ✅')
+class Test_Script1:
 
-# def test_script1():
-#     x = script1.Class_Script.Say_Hi()
-#     try:
-#         assert type(x) == str
-#     except AssertionError:
-#         print('NOT GOOD')
-#     else:
-#         print('GOOD')
+    @staticmethod
+    def test_sayhi():
+        x = script1.Class_Script.Say_Hi()
+        try:
+            print(f'⚙️ Testing Script-1...')
+            assert type(x) != 0
+        except AssertionError:
+            print('Script-1: Failed ❌')
+        else:
+            print('Script-1: Success ✅')
+
+    @staticmethod
+    def test_showtime():
+        x = script1.Class_Script.Show_Time('Test')
+        try:
+            assert type(x) != 0
+        except AssertionError:
+            print('Script-1: Failed ❌')
+        else:
+            print('Script-1: Success ✅')
+
+    @staticmethod
+    def Start_Test():
+        Test_Script1.test_sayhi()
+        Test_Script1.test_showtime()
 
 
 def Main():
-    test_script1()
-
+    Test_Script1.Start_Test()
 
 if __name__ == '__main__':
     Main()

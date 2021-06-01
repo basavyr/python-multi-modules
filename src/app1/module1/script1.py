@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import time
+
 
 class Class_Script:
     @staticmethod
@@ -10,6 +12,15 @@ class Class_Script:
             return 0
         else:
             return message
+
+    @staticmethod
+    def Show_Time(name):
+        try:
+            now = time.time()
+        except Exception:
+            return 0
+        else:
+            return f'{name} -> {now}'
 
 
 def Main():
