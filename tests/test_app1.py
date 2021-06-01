@@ -95,7 +95,7 @@ class Test_Module1_Script2:
 
     @staticmethod
     def test_giverandomarray():
-        x = script2.Class_Script.Give_Random_Array(0)
+        x = script2.Class_Script.Give_Random_Array(1)
         try:
             assert len(x) > 0
         except AssertionError:

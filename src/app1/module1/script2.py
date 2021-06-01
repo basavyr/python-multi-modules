@@ -38,6 +38,11 @@ class Class_Script:
 
     @staticmethod
     def Give_Random_Array(size):
+        if(type(size) == str):
+            return []
+        if(size < 0):
+            return []
+
         get_random = lambda: rd.randint(0, 10)
         try:
             classic_array = [get_random() for _ in range(size)]
@@ -45,11 +50,15 @@ class Class_Script:
         except Exception:
             return []
         else:
-            return np_array
+            if(size == 0):
+                return [0]
+            else:
+                return np_array
 
 
 def Main():
     print(f'This is the {Main.__name__}() function from Script-2')
+
 
 if __name__ == '__main__':
     Class_Script.Say_Hi()
