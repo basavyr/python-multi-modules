@@ -115,6 +115,33 @@ class Test_Module1_Script2:
         Test_Module1_Script2.test_giverandomarray()
 
 
+class Test_Module2_Script1:
+    @staticmethod
+    def test_sayhi():
+        x = script1_m2.Class_Script.Say_Hi()
+        try:
+            assert x != None
+        except AssertionError:
+            print(f'{script1_m2.Class_Script.Say_Hi.__name__}: Failed ❌')
+        else:
+            print(f'{script1_m2.Class_Script.Say_Hi.__name__}: Success ✅')
+
+    @staticmethod
+    def test_scriptname():
+        x = script1_m2.Class_Script.Get_Script_Name()
+        try:
+            assert x != None
+        except AssertionError:
+            print(f'{script1_m2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
+        else:
+            print(f'{script1_m2.Class_Script.Get_Script_Name.__name__}: Success ✅')
+
+    @staticmethod
+    def Start_Test():
+        Test_Module2_Script1.test_sayhi()
+        Test_Module2_Script1.test_scriptname()
+
+
 class Test_Module2_Script2:
     @staticmethod
     def test_sayhi():
@@ -152,8 +179,8 @@ def Main():
     Test_Module1_Script2.Start_Test()
 
     print(f'\n********** MODULE 2 **********\n')
-    # print(f'\n⚙️ Testing Script-1...\n')
-    # Test_Module2_Script1.Start_Test()
+    print(f'\n⚙️ Testing Script-1...\n')
+    Test_Module2_Script1.Start_Test()
 
     print(f'\n⚙️ Testing Script-2...\n')
     Test_Module2_Script2.Start_Test()
