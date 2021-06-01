@@ -21,7 +21,7 @@ class Test_Script1:
         x = script1.Class_Script.Say_Hi()
         try:
             print(f'⚙️ Testing Script-1...')
-            assert type(x) != 0
+            assert x != 0
         except AssertionError:
             print('Script-1: Failed ❌')
         else:
@@ -31,7 +31,7 @@ class Test_Script1:
     def test_showtime():
         x = script1.Class_Script.Show_Time('Test')
         try:
-            assert type(x) != 0
+            assert x != 0
         except AssertionError:
             print('Script-1: Failed ❌')
         else:
@@ -39,9 +39,10 @@ class Test_Script1:
 
     @staticmethod
     def test_computeterms():
-        test_list = [1, 2, 3, 4]
-        x = script1.Class_Script.Compute_Term(test_list)
+        test_good_list = [x for x in range(1, 10)]
+        test_bad_list = [1, 2, 3, 'a']
         try:
+            x=script1.Class_Script.Compute_Term(test_good_list)
             assert x != 0
         except AssertionError:
             print('Script-1: Failed ❌')

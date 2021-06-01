@@ -25,6 +25,13 @@ class Class_Script:
     @classmethod
     def Compute_Term(cls, elements):
         operation = lambda x: x * 2
+        for element in elements:
+            try:
+                assert type(element) != str
+            except AssertionError:
+                return 0
+            else:
+                pass
         try:
             new_elements = list(map(operation, elements))
         except Exception:
