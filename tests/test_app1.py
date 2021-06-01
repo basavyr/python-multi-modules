@@ -38,13 +38,26 @@ class Test_Script1:
             print('Script-1: Success ✅')
 
     @staticmethod
+    def test_computeterms():
+        test_list = [1, 2, 3, 4]
+        x = script1.Class_Script.Compute_Term(test_list)
+        try:
+            assert x != 0
+        except AssertionError:
+            print('Script-1: Failed ❌')
+        else:
+            print('Script-1: Success ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Script1.test_sayhi()
         Test_Script1.test_showtime()
+        Test_Script1.test_computeterms()
 
 
 def Main():
     Test_Script1.Start_Test()
+
 
 if __name__ == '__main__':
     Main()

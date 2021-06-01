@@ -22,6 +22,15 @@ class Class_Script:
         else:
             return f'{name} -> {now}'
 
+    @classmethod
+    def Compute_Term(cls, elements):
+        operation = lambda x: x * 2
+        try:
+            new_elements = list(map(operation, elements))
+        except Exception:
+            return 0
+        return new_elements
+
 
 def Main():
     print(f'This is the {Main.__name__}() function from Script-1')
