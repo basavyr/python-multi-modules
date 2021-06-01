@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import os
+import platform
 
 
 class Class_Script:
@@ -22,6 +23,16 @@ class Class_Script:
         except Exception:
             return 0
         return new_path
+
+    @staticmethod
+    def Show_System_Info(pc_name):
+        try:
+            uname = platform.uname()
+            full_pc_name = f'This PC -> {pc_name}\n{uname}'
+        except Exception:
+            return 0
+        else:
+            return full_pc_name
 
 
 def Main():
