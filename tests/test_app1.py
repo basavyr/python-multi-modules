@@ -127,8 +127,19 @@ class Test_Module2_Script2:
             print(f'{script2_m2.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
+    def test_scriptname():
+        x = script2_m2.Class_Script.Get_Script_Name()
+        try:
+            assert x != None
+        except AssertionError:
+            print(f'{script2_m2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
+        else:
+            print(f'{script2_m2.Class_Script.Get_Script_Name.__name__}: Success ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Module2_Script2.test_sayhi()
+        Test_Module2_Script2.test_scriptname()
 
 
 def Main():
@@ -146,6 +157,7 @@ def Main():
 
     print(f'\n⚙️ Testing Script-2...\n')
     Test_Module2_Script2.Start_Test()
+
 
 if __name__ == '__main__':
     Main()

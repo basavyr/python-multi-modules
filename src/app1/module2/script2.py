@@ -12,7 +12,12 @@ import os
 class Class_Script:
     @staticmethod
     def Get_Script_Name():
-        return os.path.basename(__file__)
+        try:
+            script_name = os.path.basename(__file__)
+        except Exception:
+            return None
+        else:
+            return script_name
 
     @staticmethod
     def Say_Hi():
