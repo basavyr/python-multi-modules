@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import os
+
 
 class Class_Script:
     @staticmethod
@@ -11,6 +13,15 @@ class Class_Script:
             return 0
         else:
             return 1
+
+    @staticmethod
+    def Show_Location(directory):
+        try:
+            path = os.getcwd()
+            new_path = path + directory
+        except Exception:
+            return 0
+        return new_path
 
 
 def Main():
