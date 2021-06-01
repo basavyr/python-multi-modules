@@ -9,6 +9,5 @@ try:
 except ImportError:
     sys.path.append('src/')
     import app1.module1.script1 as script1
-
-
-script1.Class_Script.Say_Hi()
+finally:
+    print('Finish importing...')
