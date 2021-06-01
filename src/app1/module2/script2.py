@@ -31,6 +31,16 @@ class Class_Script:
         else:
             return message
 
+    @staticmethod
+    def Add_Numbers(num1, num2):
+        try:
+            x = [num1 for _ in range(10)]
+            y = [num2 for _ in range(10)]
+        except Exception:
+            return None
+        else:
+            return x, y
+
 
 def Main():
     print(

@@ -26,6 +26,15 @@ class Class_Script:
         else:
             return message
 
+    @staticmethod
+    def Test_External_Functions(num1, num2):
+        try:
+            core = script2.Class_Script.Add_Numbers(num1, num2)
+        except Exception:
+            return None
+        else:
+            return core
+
 
 def Main():
     print(

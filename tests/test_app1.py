@@ -137,9 +137,20 @@ class Test_Module2_Script1:
             print(f'{script1_m2.Class_Script.Get_Script_Name.__name__}: Success ✅')
 
     @staticmethod
+    def test_externalfunctions():
+        x = script1_m2.Class_Script.Test_External_Functions(10, 10)
+        try:
+            assert x != None
+        except AssertionError:
+            print(f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Failed ❌')
+        else:
+            print(f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Success ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Module2_Script1.test_sayhi()
         Test_Module2_Script1.test_scriptname()
+        Test_Module2_Script1.test_externalfunctions()
 
 
 class Test_Module2_Script2:
