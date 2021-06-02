@@ -2,8 +2,9 @@
 import numpy as np
 
 import os
-
-from src.app2.module1 import script1
+import sys
+print(sys.path)
+from app2.module1 import script1
 
 
 class Class_Script:
@@ -19,8 +20,8 @@ class Class_Script:
 
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-1'
-    # print(message)
-    s1.Test()
+    print(message)
+    script1.Test()
 
 
 if __name__ == '__main__':
