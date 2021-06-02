@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import numpy as np
 
+import os
 
 class Class_Script:
     @staticmethod
@@ -14,7 +15,7 @@ class Class_Script:
 
 
 def Main():
-    message = f'This is {__file__} script from Module-1'
+    message = f'This is {os.path.basename(__file__)} script from Module-1'
     print(message)
 
 
