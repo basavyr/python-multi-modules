@@ -4,7 +4,7 @@ import numpy as np
 import os
 import sys
 
-from src.app2.module1 import script1
+from src.app2.package1 import module1
 
 
 class Class_Script:
@@ -21,7 +21,7 @@ class Class_Script:
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
     print(message)
-    print(f'Called {script1.Test()}')
+    print(f'Called {module1.Test()}')
 
 
 if __name__ == '__main__':
