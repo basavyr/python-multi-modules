@@ -1,4 +1,6 @@
 #!/usr/bin/env python
 
+import os
+
 def Test():
-    print('Script 1 from module-1')
+    return f'function {Test.__name__}() from  {os.path.basename(__file__)} inside Module-1'

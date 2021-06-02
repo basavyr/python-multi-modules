@@ -19,9 +19,9 @@ class Class_Script:
 
 
 def Main():
-    message = f'This is {os.path.basename(__file__)} script from Module-1'
+    message = f'This is {os.path.basename(__file__)} script from Module-2'
     print(message)
-    script1.Test()
+    print(f'Called {script1.Test()}')
 
 
 if __name__ == '__main__':
