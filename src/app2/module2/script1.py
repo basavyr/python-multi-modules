@@ -3,8 +3,8 @@ import numpy as np
 
 import os
 import sys
-print(sys.path)
-from app2.module1 import script1
+
+from src.app2.module1 import script1
 
 
 class Class_Script:
