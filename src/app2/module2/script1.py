@@ -3,6 +3,8 @@ import numpy as np
 
 import os
 
+from src.app2.module1 import script1
+
 
 class Class_Script:
     @staticmethod
@@ -17,7 +19,8 @@ class Class_Script:
 
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-1'
-    print(message)
+    # print(message)
+    s1.Test()
 
 
 if __name__ == '__main__':
