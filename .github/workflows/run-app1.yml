@@ -27,3 +27,12 @@ jobs:
     - name: Run App-1
       run: |
         ./apps.sh
+    - name: Archive App-1
+      run: |
+        sudo apt-get install zip gzip tar
+        zip -r App1.zip src/app1/
+        ls -la
+        cd src/
+        ls -la
+
+
