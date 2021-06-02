@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import os
+import platform
+from datetime import datetime
 
 
 class Class_Script:
@@ -14,9 +16,19 @@ class Class_Script:
         else:
             return new_array
 
+    @staticmethod
+    def Get_Time():
+        try:
+            message = f'{datetime.utcnow()} -> {platform.os.uname()}'
+        except Exception:
+            return None
+        else:
+            return message
+
 
 def Main():
     print(Class_Script.Give_Array())
+    print(Class_Script.Get_Time())
 
 
 if __name__ == '__main__':
