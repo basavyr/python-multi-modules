@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 
 # try/except block for importing the script1
-try:
-    from app1.module2 import script2
-except ModuleNotFoundError:
-    import script2
-except ImportError:
-    from src.app1.module2 import script2
+# try:
+from src.app1.module2 import script2
+# except ModuleNotFoundError:
+# from app1.module2 import script2
+# import script2
+# except ImportError:
 
 
 import os

@@ -5,18 +5,26 @@ import sys
 app = 'App-1'
 
 try:
-    sys.path.append('../')
+    print(sys.path)
+    sys.path.insert(1, '')
+    print(sys.path)
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
     import src.app1.module2.script1 as script1_m2
     import src.app1.module2.script2 as script2_m2
     #print('Direct execution of the test')
 except ImportError:
-    sys.path.append('src/')
-    import app1.module1.script1 as script1
-    import app1.module1.script2 as script2
-    import app1.module2.script1 as script1_m2
-    import app1.module2.script2 as script2_m2
+    print(sys.path)
+    sys.path.insert(1, '../')
+    print(sys.path)
+    import src.app1.module1.script1 as script1
+    import src.app1.module1.script2 as script2
+    import src.app1.module2.script1 as script1_m2
+    import src.app1.module2.script2 as script2_m2
+    # import app1.module1.script1 as script1
+    # import app1.module1.script2 as script2
+    # import app1.module2.script1 as script1_m2
+    # import app1.module2.script2 as script2_m2
     #print('Execution of the script from tests/ dir')
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
@@ -142,9 +150,11 @@ class Test_Module2_Script1:
         try:
             assert x != None
         except AssertionError:
-            print(f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Failed ❌')
+            print(
+                f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Failed ❌')
         else:
-            print(f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Success ✅')
+            print(
+                f'{script1_m2.Class_Script.Test_External_Functions.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
