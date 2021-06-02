@@ -5,26 +5,18 @@ import sys
 app = 'App-1'
 
 try:
-    print(sys.path)
     sys.path.insert(1, '')
-    print(sys.path)
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
     import src.app1.module2.script1 as script1_m2
     import src.app1.module2.script2 as script2_m2
     #print('Direct execution of the test')
 except ImportError:
-    print(sys.path)
     sys.path.insert(1, '../')
-    print(sys.path)
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
     import src.app1.module2.script1 as script1_m2
     import src.app1.module2.script2 as script2_m2
-    # import app1.module1.script1 as script1
-    # import app1.module1.script2 as script2
-    # import app1.module2.script1 as script1_m2
-    # import app1.module2.script2 as script2_m2
     #print('Execution of the script from tests/ dir')
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')

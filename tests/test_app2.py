@@ -1,5 +1,8 @@
 import sys
 
+app = 'App-2'
+
+
 try:
     sys.path.insert(1, '')
     from src.app2.module2 import script1
@@ -16,6 +19,7 @@ class Test_Module2_Script1:
     def test_main():
         try:
             x = script1.Main()
+            print(x)
         except Exception:
             print('Test failed ❌')
         else:
