@@ -6,12 +6,12 @@ app = 'App-2'
 
 try:
     sys.path.insert(1, '')
-    from src.app2.package2 import module1
-    from src.app2.package2 import module2
+    from src.app2.package2 import module1 as module1_p2
+    from src.app2.package2 import module2 as module2_p2
 except ModuleNotFoundError:
     sys.path.insert(1, '../')
-    from src.app2.package2 import module1
-    from src.app2.package2 import module2
+    from src.app2.package2 import module1 as module1_p2
+    from src.app2.package2 import module2 as module2_p2
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
@@ -23,7 +23,7 @@ class Test_Package2_Module1:
         ok_msg = f'Test @ {datetime.utcnow()}: ✅'
         fail_msg = f'Test @ {datetime.utcnow()}: ❌'
         try:
-            x = module1.Main()
+            x = module1_p2.Main()
         except Exception:
             print(fail_msg)
         else:
