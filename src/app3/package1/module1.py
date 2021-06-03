@@ -16,5 +16,5 @@ class Export_Object:
 
     @staticmethod
     def Get_Classes(obj):
-        members = inspect.getmembers(obj, inspect.isclass)
-        print(members)
+        class_members = inspect.getmembers(obj, inspect.isclass)
+        print(class_members)

@@ -124,5 +124,5 @@ Y_2 = Test_Class_2()
 YY = Combo_Class([Y_1, Y_2])
 YY_0 = Combo_Class([Y_1_0, Y_2_0])
 
-print(YY.Show_Container())
-print(YY_0.Show_Container())
+for Y in [YY, YY_0]:
+    m1.Export_Object.Get_Classes(Y)
