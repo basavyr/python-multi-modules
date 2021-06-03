@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from src.app1.module2 import script2
+from src.app1.package1 import module2
 
 
 # try/except block for importing the script1
@@ -31,7 +31,7 @@ class Class_Script:
     @staticmethod
     def Test_External_Functions(num1, num2):
         try:
-            core = script2.Class_Script.Add_Numbers(num1, num2)
+            core = module2.Class_Script.Add_Numbers(num1, num2)
         except Exception:
             return None
         else:

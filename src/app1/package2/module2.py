@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
 
-from src.app1.module2 import script1
+from src.app1.package2 import module1
 
 
-# try/except block for importing the script1
+# try/except block for importing the module1
 # try:
-#     from src.app1.module2 import script1
+#     from src.app1.module2 import module1
 # except ModuleNotFoundError:
-#     from app1.module2 import script1
+#     from app1.module2 import module1
 # except ImportError:
-#     import script1
+#     import module1
 
 
 import os
@@ -49,8 +49,8 @@ class Class_Script:
 def Main():
     print(
         f'This is the {Main.__name__}() function from {Class_Script.Get_Script_Name()}')
-    print(f'This is called from -> {script1.Class_Script.Get_Script_Name()}')
-    print(f'{script1.Class_Script.Say_Hi()} | This is called from -> {script1.Class_Script.Get_Script_Name()}')
+    print(f'This is called from -> {module1.Class_Script.Get_Script_Name()}')
+    print(f'{module1.Class_Script.Say_Hi()} | This is called from -> {module1.Class_Script.Get_Script_Name()}')
 
 
 if __name__ == '__main__':
