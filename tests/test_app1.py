@@ -36,7 +36,7 @@ class Test_Package1_Module1:
         except AssertionError:
             print(f'{m1_p1.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print(f'{modm1_p1ule1.Class_Script.Say_Hi.__name__}: Success ✅')
+            print(f'{m1_p1.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_showtime():
