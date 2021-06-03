@@ -57,6 +57,7 @@ class Test_Class_2:
 
 
 Y_1 = Test_Class_1
+Y_2 = Test_Class_2
 
 
 imp_Y_1 = m1.Export_Object.Import_Object(Y_1)
