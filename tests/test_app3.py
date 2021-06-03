@@ -56,8 +56,14 @@ class Test_Class_2:
             f'This is {Test_Class_2.Test4.__name__} from {Test_Class_2.__name__}')
 
 
+class Combo_Class:
+    def __init__(self, cls_1, cls_2):
+        self.combo = [cls_1, cls_2]
+
+
 Y_1 = Test_Class_1
 Y_2 = Test_Class_2
 
-
-imp_Y_1 = m1.Export_Object.Import_Object(Y_1)
+Y = Combo_Class(Y_1, Y_2)
+print(Y.combo)
+imp_Y_1 = m1.Export_Object.Import_Object(Y)
