@@ -64,7 +64,13 @@ class Test_Class_2:
             f'This is {Test_Class_2.Test4.__name__} from {Test_Class_2.__name__}')
 
 
-class Combo_Class:
+class X_2_Class:
+    """initialize a class that takes other two classes as arguments
+
+    If the objects which are given as arguments are not initialized classes of Test_Class1 and Test_Class2 type, then the return objects will be of type None
+
+    """
+
     def __init__(self, cls_1, cls_2):
         class_containers = [cls_1, cls_2]
         try:
@@ -72,6 +78,12 @@ class Combo_Class:
                 class_container.main_object for class_container in class_containers]
         except AttributeError:
             self.combo = [None for _ in class_containers]
+
+    def Check_Container_Integrity(self):
+        if(all(self.combo)):
+            print('Passed')
+        else:
+            print('Failed')
 
     def Show_Container_Class(self):
         container_class = self.combo
@@ -85,8 +97,14 @@ class Combo_Class:
                 print('NULL')
 
 
+class Combo_Class:
+    def __init__(self, class_container):
+        return 1
+
+
 Y_1 = Test_Class_1()
 Y_2 = Test_Class_2()
 
-Y = Combo_Class(Test_Class_1, Test_Class_2)
+Y = X_2_Class(Test_Class_1, Test_Class_2)
 print(Y.combo)
+Y.Check_Container_Integrity()
