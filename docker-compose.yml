@@ -1,0 +1,8 @@
+version: 3
+services:
+    docker-app:
+        build: ./docker-app
+        container_name: multi_app
+    docker-test:
+        build: ./docker-test
+        container_name: multi_test
