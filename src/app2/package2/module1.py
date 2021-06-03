@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import numpy as np
-
+from inspect import getmembers, isclass, isfunction
 import os
 import sys
 
@@ -26,11 +26,9 @@ class Class_Script:
 
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
-    print(message)
-    with open('helper.md', 'w+') as writer:
-        for function_component in dir(module1):
-            writer.write(function_component)
-            writer.write('\n')
+    m1 = module1
+    for x in getmembers(m1, isclass):
+        print(f'class --> {x[0]}')
 
 
 if __name__ == '__main__':
