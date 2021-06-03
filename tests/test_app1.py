@@ -7,7 +7,7 @@ app = 'App-1'
 try:
     # print(sys.path)
     sys.path.insert(1, '')
-    print('in first import block')
+    # print('in first import block')
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
     import src.app1.module2.script1 as script1_m2
@@ -16,7 +16,7 @@ try:
 except ImportError:
     # print(sys.path)
     sys.path.insert(1, '../')
-    print('in second import block')
+    # print('in second import block')
     import src.app1.module1.script1 as script1
     import src.app1.module1.script2 as script2
     import src.app1.module2.script1 as script1_m2

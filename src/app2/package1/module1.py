@@ -5,6 +5,7 @@ import numpy as np
 
 
 class Class_Script:
+
     @staticmethod
     def Test():
         mseg = f'function {Class_Script.Test.__name__}() from  {os.path.basename(__file__)} inside Module-1'
@@ -12,7 +13,7 @@ class Class_Script:
         return mseg
 
     @staticmethod
-    def Extra_Text():
+    def Extra_Test():
         x = np.arange(0, 11, 1)
         y = list(map(lambda x: x * 2, x))
         assert len(x) == len(y), 'Arrays do not have the same length'
