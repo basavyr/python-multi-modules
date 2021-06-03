@@ -67,7 +67,7 @@ class Test_Class_2:
 class X_2_Class:
     """initialize a class that takes other two classes as arguments
 
-    If the objects which are given as arguments are not initialized classes of Test_Class1 and Test_Class2 type, then the return objects will be of type None
+    If the objects which are given as arguments are not initialized classes of Test_Class1 and Test_Class2 type, then the return object will be an array of None items.
 
     """
 
@@ -99,12 +99,18 @@ class X_2_Class:
 
 class Combo_Class:
     def __init__(self, class_container):
-        return 1
+        self.container = []
+        for class_component in class_container:
+            try:
+                # non-initialized class
+                self.container.append(class_component.main_object)
+                # print(f'{class_component.main_object}')
+                # return f'{class_component.main_object}'
+            except AttributeError:
+                # class instance
+                self.container.append(class_component().main_object)
+                # print(f'{class_component().main_object}')
+                # return f'{class_component().main_object}'
 
-
-Y_1 = Test_Class_1()
-Y_2 = Test_Class_2()
-
-Y = X_2_Class(Test_Class_1, Test_Class_2)
-print(Y.combo)
-Y.Check_Container_Integrity()
+    def Show_Container(self):
+        return self.container

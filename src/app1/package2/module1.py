@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 
-from src.app1.module2 import script2
+import os
+
+import sys
+# print(f'module1/package2 -> {sys.path}')
+
+
+try:
+    from src.app1.package2 import module2
+except ModuleNotFoundError:
+    import module2
 
 
 # try/except block for importing the script1
@@ -10,8 +19,6 @@ from src.app1.module2 import script2
 #     import script2
 # except ImportError:
 #     from app1.module2 import script2
-
-import os
 
 
 class Class_Script:
@@ -31,7 +38,7 @@ class Class_Script:
     @staticmethod
     def Test_External_Functions(num1, num2):
         try:
-            core = script2.Class_Script.Add_Numbers(num1, num2)
+            core = module2.Class_Script.Add_Numbers(num1, num2)
         except Exception:
             return None
         else:
