@@ -27,8 +27,12 @@ class Class_Script:
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
     m1 = module1
+    print('******* Classes *******')
     for x in getmembers(m1, isclass):
         print(f'class --> {x[0]}')
+    print('******* Functions *******')
+    for x in getmembers(m1,isfunction):
+        print(f'function --> {x[0]}()')
 
 
 if __name__ == '__main__':
