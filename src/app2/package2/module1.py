@@ -4,12 +4,12 @@ import numpy as np
 import os
 import sys
 
-print(f'in module 1 from package 2 {sys.path}')
+# print(f'in module 1 from package 2 {sys.path}')
 
 try:
     from src.app2.package1 import module1
 except ModuleNotFoundError:
-    sys.path.insert(1,'../')
+    sys.path.insert(1, '../')
     from package1 import module1
 
 
@@ -27,7 +27,12 @@ class Class_Script:
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
     print(message)
-    print(f'Called {module1.Test()}')
+    for function_component in dir(module1):
+        print(function_component)
+    
+
+    for helper_components in help(module1):
+        print(helper_components)
 
 
 if __name__ == '__main__':
