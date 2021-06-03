@@ -13,6 +13,10 @@ finally:
 
 
 class Test_Class_1:
+
+    def __init__(self):
+        self.main_object = 'Object->Test_Class1'
+
     @staticmethod
     def Test1():
         print(
@@ -35,6 +39,10 @@ class Test_Class_1:
 
 
 class Test_Class_2:
+
+    def __init__(self):
+        self.main_object = 'Object->Test_Class2'
+
     @staticmethod
     def Test1():
         print(
@@ -58,11 +66,13 @@ class Test_Class_2:
 
 class Combo_Class:
     def __init__(self, cls_1, cls_2):
-        self.combo = [cls_1, cls_2]
+        class_containers = [cls_1, cls_2]
+        self.combo = [
+            class_container.main_object for class_container in class_containers]
 
 
-Y_1 = Test_Class_1
-Y_2 = Test_Class_2
+Y_1 = Test_Class_1()
+Y_2 = Test_Class_2()
 
 Y = Combo_Class(Y_1, Y_2)
 print(Y.combo)
