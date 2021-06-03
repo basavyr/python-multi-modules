@@ -34,8 +34,23 @@ class Test_Package2_Module1:
         Test_Package2_Module1.test_main()
 
 
+class Test_Package2_Module2:
+
+    @staticmethod
+    def test_givearray():
+        try:
+            x = module2_p2.Class_Script.Give_Array()
+            assert x != None, 'Assertion failed'
+        except AssertionError:
+            print(
+                f'Test: {Test_Package2_Module2.test_givearray.__name__} @ {datetime.utcnow()}: ❌')
+        else:
+            print(
+                f'Test: {Test_Package2_Module2.test_givearray.__name__} @ {datetime.utcnow()}: ✅')
+
+
 def Main():
-    Test_Package2_Module1.Start_Test()
+    Test_Package2_Module2.test_givearray()
 
 
 if __name__ == '__main__':
