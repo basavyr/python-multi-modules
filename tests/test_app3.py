@@ -101,14 +101,15 @@ class Combo_Class:
     def __init__(self, class_container):
         for class_component in class_container:
             try:
-                print(f'{class_component}')
-            except TypeError:
-                print(f'{class_component()}')
+                print(f'{class_component.main_object}')
+            except AttributeError:
+                print(f'{class_component().main_object}')
 
 
+Y_1_0 = Test_Class_1
 Y_1 = Test_Class_1()
+Y_2_0 = Test_Class_2
 Y_2 = Test_Class_2()
 
-Y = X_2_Class(Test_Class_1, Test_Class_2)
-
 YY = Combo_Class([Y_1, Y_2])
+YY = Combo_Class([Y_1_0, Y_2_0])
