@@ -48,9 +48,26 @@ class Test_Package2_Module2:
             print(
                 f'Test: {Test_Package2_Module2.test_givearray.__name__} @ {datetime.utcnow()}: ✅')
 
+    @staticmethod
+    def test_gettime():
+        try:
+            x = module2_p2.Class_Script.Get_Time()
+            assert x != None
+        except AssertionError:
+            print(
+                f'Test: {Test_Package2_Module2.test_gettime.__name__} @ {datetime.utcnow()}: ❌')
+        else:
+            print(
+                f'Test: {Test_Package2_Module2.test_gettime.__name__} @ {datetime.utcnow()}: ✅')
+
+    @staticmethod
+    def Start_Test():
+        Test_Package2_Module2.test_givearray()
+        Test_Package2_Module2.test_gettime()
+
 
 def Main():
-    Test_Package2_Module2.test_givearray()
+    Test_Package2_Module2.Start_Test()
 
 
 if __name__ == '__main__':
