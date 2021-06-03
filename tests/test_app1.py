@@ -69,7 +69,7 @@ class Test_Package1_Module1:
         Test_Package1_Module1.test_computeterms()
 
 
-class Test_Module1_module2:
+class Test_Package1_Module2:
 
     @staticmethod
     def test_sayhi():
@@ -113,13 +113,13 @@ class Test_Module1_module2:
 
     @staticmethod
     def Start_Test():
-        Test_Module1_module2.test_sayhi()
-        Test_Module1_module2.test_showlocation()
-        Test_Module1_module2.test_showsysteminfo()
-        Test_Module1_module2.test_giverandomarray()
+        Test_Package1_Module2.test_sayhi()
+        Test_Package1_Module2.test_showlocation()
+        Test_Package1_Module2.test_showsysteminfo()
+        Test_Package1_Module2.test_giverandomarray()
 
 
-class Test_Module2_module1:
+class Test_Package2_Module1:
     @staticmethod
     def test_sayhi():
         x = module1_m2.Class_Script.Say_Hi()
@@ -154,9 +154,9 @@ class Test_Module2_module1:
 
     @staticmethod
     def Start_Test():
-        Test_Module2_module1.test_sayhi()
-        Test_Module2_module1.test_scriptname()
-        Test_Module2_module1.test_externalfunctions()
+        Test_Package2_Module1.test_sayhi()
+        Test_Package2_Module1.test_scriptname()
+        Test_Package2_Module1.test_externalfunctions()
 
 
 class Test_Module2_module2:
@@ -190,14 +190,14 @@ def Main():
     print(f'********** Package-1 **********')
 
     print(f'\n⚙️ Testing Module-1...\n')
-    Test_Module1_module1.Start_Test()
+    Test_Package1_Module1.Start_Test()
 
     print(f'\n⚙️ Testing Module-2...\n')
-    Test_Module1_module2.Start_Test()
+    Test_Package1_Module2.Start_Test()
 
     print(f'\n********** Package-2 **********\n')
     print(f'\n⚙️ Testing Module-1...\n')
-    Test_Module2_module1.Start_Test()
+    Test_Package2_Module1.Start_Test()
 
     print(f'\n⚙️ Testing Module-2...\n')
     Test_Module2_module2.Start_Test()
