@@ -99,11 +99,21 @@ class X_2_Class:
 
 class Combo_Class:
     def __init__(self, class_container):
+        self.container = []
         for class_component in class_container:
             try:
-                print(f'{class_component.main_object}')
+                # non-initialized class
+                self.container.append(class_component.main_object)
+                # print(f'{class_component.main_object}')
+                # return f'{class_component.main_object}'
             except AttributeError:
-                print(f'{class_component().main_object}')
+                # class instance
+                self.container.append(class_component().main_object)
+                # print(f'{class_component().main_object}')
+                # return f'{class_component().main_object}'
+
+    def Show_Container(self):
+        return self.container
 
 
 Y_1_0 = Test_Class_1
@@ -112,4 +122,7 @@ Y_2_0 = Test_Class_2
 Y_2 = Test_Class_2()
 
 YY = Combo_Class([Y_1, Y_2])
-YY = Combo_Class([Y_1_0, Y_2_0])
+YY_0 = Combo_Class([Y_1_0, Y_2_0])
+
+print(YY.Show_Container())
+print(YY_0.Show_Container())
