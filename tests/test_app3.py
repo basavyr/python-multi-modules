@@ -121,14 +121,15 @@ Y_1 = Test_Class_1()
 Y_2_0 = Test_Class_2
 Y_2 = Test_Class_2()
 
-YY = Combo_Class([Y_1, Y_2])
-YY_0 = Combo_Class([Y_1_0, Y_2_0])
+Y_container = [Y_1, Y_2, Y_1_0, Y_2_0]
 
-print('Get the classes for each object')
-for Y in [YY, YY_0]:
-    m1.Export_Object.Get_Classes(Y)
+YY = Combo_Class(Y_container)
+
+# print('Get the classes for each object')
+# for Y in Y_container:
+#     m1.Export_Object.Get_Classes(Y)
+
 print('Get the Functions for each object')
-
-for function in m1.Export_Object.Get_Functions(Y_1_0):
+for function in m1.Export_Object.Get_Functions(Y_1):
     if '__init__' not in function:
-        print(function)
+        print(function[0])
