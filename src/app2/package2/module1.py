@@ -4,7 +4,13 @@ import numpy as np
 import os
 import sys
 
-from src.app2.package1 import module1
+print(f'in module 1 from package 2 {sys.path}')
+
+try:
+    from src.app2.package1 import module1
+except ModuleNotFoundError:
+    sys.path.insert(1,'../')
+    from package1 import module1
 
 
 class Class_Script:
