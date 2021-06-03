@@ -27,12 +27,10 @@ class Class_Script:
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
     print(message)
-    for function_component in dir(module1):
-        print(function_component)
-    
-
-    for helper_components in help(module1):
-        print(helper_components)
+    with open('helper.md', 'w+') as writer:
+        for function_component in dir(module1):
+            writer.write(function_component)
+            writer.write('\n')
 
 
 if __name__ == '__main__':
