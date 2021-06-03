@@ -159,7 +159,7 @@ class Test_Package2_Module1:
         Test_Package2_Module1.test_externalfunctions()
 
 
-class Test_Module2_module2:
+class Test_Package2_Module2:
     @staticmethod
     def test_sayhi():
         x = module2_m2.Class_Script.Say_Hi()
@@ -182,8 +182,8 @@ class Test_Module2_module2:
 
     @staticmethod
     def Start_Test():
-        Test_Module2_module2.test_sayhi()
-        Test_Module2_module2.test_scriptname()
+        Test_Package2_Module2.test_sayhi()
+        Test_Package2_Module2.test_scriptname()
 
 
 def Main():
@@ -200,7 +200,7 @@ def Main():
     Test_Package2_Module1.Start_Test()
 
     print(f'\n⚙️ Testing Module-2...\n')
-    Test_Module2_module2.Start_Test()
+    Test_Package2_Module2.Start_Test()
 
 
 if __name__ == '__main__':
