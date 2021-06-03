@@ -122,35 +122,35 @@ class Test_Package1_Module2:
 class Test_Package2_Module1:
     @staticmethod
     def test_sayhi():
-        x = module1_m2.Class_Script.Say_Hi()
+        x = m1_p2.Class_Script.Say_Hi()
         try:
             assert x != None
         except AssertionError:
-            print(f'{module1_m2.Class_Script.Say_Hi.__name__}: Failed ❌')
+            print(f'{m1_p2.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print(f'{module1_m2.Class_Script.Say_Hi.__name__}: Success ✅')
+            print(f'{m1_p2.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_scriptname():
-        x = module1_m2.Class_Script.Get_Script_Name()
+        x = m1_p2.Class_Script.Get_Script_Name()
         try:
             assert x != None
         except AssertionError:
-            print(f'{module1_m2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
+            print(f'{m1_p2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
         else:
-            print(f'{module1_m2.Class_Script.Get_Script_Name.__name__}: Success ✅')
+            print(f'{m1_p2.Class_Script.Get_Script_Name.__name__}: Success ✅')
 
     @staticmethod
     def test_externalfunctions():
-        x = module1_m2.Class_Script.Test_External_Functions(10, 10)
+        x = m1_p2.Class_Script.Test_External_Functions(10, 10)
         try:
             assert x != None
         except AssertionError:
             print(
-                f'{module1_m2.Class_Script.Test_External_Functions.__name__}: Failed ❌')
+                f'{m1_p2.Class_Script.Test_External_Functions.__name__}: Failed ❌')
         else:
             print(
-                f'{module1_m2.Class_Script.Test_External_Functions.__name__}: Success ✅')
+                f'{m1_p2.Class_Script.Test_External_Functions.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
@@ -162,23 +162,23 @@ class Test_Package2_Module1:
 class Test_Package2_Module2:
     @staticmethod
     def test_sayhi():
-        x = module2_m2.Class_Script.Say_Hi()
+        x = m2_p2.Class_Script.Say_Hi()
         try:
             assert x != None
         except AssertionError:
-            print(f'{module2_m2.Class_Script.Say_Hi.__name__}: Failed ❌')
+            print(f'{m2_p2.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print(f'{module2_m2.Class_Script.Say_Hi.__name__}: Success ✅')
+            print(f'{m2_p2.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_scriptname():
-        x = module2_m2.Class_Script.Get_Script_Name()
+        x = m2_p2.Class_Script.Get_Script_Name()
         try:
             assert x != None
         except AssertionError:
-            print(f'{module2_m2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
+            print(f'{m2_p2.Class_Script.Get_Script_Name.__name__}: Failed ❌')
         else:
-            print(f'{module2_m2.Class_Script.Get_Script_Name.__name__}: Success ✅')
+            print(f'{m2_p2.Class_Script.Get_Script_Name.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
