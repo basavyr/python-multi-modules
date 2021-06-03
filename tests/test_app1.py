@@ -187,19 +187,19 @@ class Test_Module2_Script2:
 
 
 def Main():
-    print(f'********** MODULE 1 **********')
+    print(f'********** Package-1 **********')
 
-    print(f'\n⚙️ Testing Script-1...\n')
+    print(f'\n⚙️ Testing Module-1...\n')
     Test_Module1_Script1.Start_Test()
 
-    print(f'\n⚙️ Testing Script-2...\n')
+    print(f'\n⚙️ Testing Module-2...\n')
     Test_Module1_Script2.Start_Test()
 
-    print(f'\n********** MODULE 2 **********\n')
-    print(f'\n⚙️ Testing Script-1...\n')
+    print(f'\n********** Package-2 **********\n')
+    print(f'\n⚙️ Testing Module-1...\n')
     Test_Module2_Script1.Start_Test()
 
-    print(f'\n⚙️ Testing Script-2...\n')
+    print(f'\n⚙️ Testing Module-2...\n')
     Test_Module2_Script2.Start_Test()
 
 
