@@ -4,10 +4,10 @@ app = 'App=3'
 
 try:
     sys.path.insert(1, '../')
-    import src.app3.package1 as pckg_1
+    import src.app3.package1.module1 as m1
 except ModuleNotFoundError:
     sys.path.insert(1, '')
-    import src.app3.package1 as pckg_1
+    import src.app3.package1.module1 as m1
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
@@ -32,4 +32,4 @@ class Test_Class:
 Y=Test_Class
 
 
-print(dir(Y))
+imp_Y=m1.Export_Object.Import_Object(Y)
