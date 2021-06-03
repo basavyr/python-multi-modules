@@ -1,2 +1,3 @@
 theme: jekyll-theme-cayman
-title: Python Multi-Modules
+title: Python Multi-Modules 📦
+description: Implementing a Python workflow with multiple apps, packages and modules. The applications support containerized execution with Docker 🐳.
