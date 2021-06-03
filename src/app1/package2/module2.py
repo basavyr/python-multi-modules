@@ -1,8 +1,15 @@
 #!/usr/bin/env python
 
+import sys
+import os
 
-from src.app1.package2 import module1
+# print(f'module2/package2 -> {sys.path}')
 
+
+try:
+    from src.app1.package2 import module1
+except ModuleNotFoundError:
+    import module1
 
 # try/except block for importing the module1
 # try:
@@ -11,9 +18,6 @@ from src.app1.package2 import module1
 #     from app1.module2 import module1
 # except ImportError:
 #     import module1
-
-
-import os
 
 
 class Class_Script:

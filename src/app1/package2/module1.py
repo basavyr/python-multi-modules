@@ -1,10 +1,15 @@
 #!/usr/bin/env python
 
-from src.app1.package2 import module2
 import os
 
 import sys
 # print(f'module1/package2 -> {sys.path}')
+
+
+try:
+    from src.app1.package2 import module2
+except ModuleNotFoundError:
+    import module2
 
 
 # try/except block for importing the script1
