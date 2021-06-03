@@ -11,4 +11,25 @@ except ModuleNotFoundError:
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
-print(pckg_1)
+
+class Test_Class:
+    @staticmethod
+    def Test1():
+        print('this is test 1')
+
+    @staticmethod
+    def Test2():
+        print('this is test 1')
+
+    @staticmethod
+    def Test3():
+        print('this is test 1')
+
+    @staticmethod
+    def Test4():
+        print('this is test 1')
+
+Y=Test_Class
+
+
+print(dir(Y))
