@@ -67,13 +67,26 @@ class Test_Class_2:
 class Combo_Class:
     def __init__(self, cls_1, cls_2):
         class_containers = [cls_1, cls_2]
-        self.combo = [
-            class_container.main_object for class_container in class_containers]
+        try:
+            self.combo = [
+                class_container.main_object for class_container in class_containers]
+        except AttributeError:
+            self.combo = [None for _ in class_containers]
+
+    def Show_Container_Class(self):
+        container_class = self.combo
+        id = 0
+        for component in container_class:
+            id += 1
+            try:
+                mseg = f'comp-{id} -> {component}'
+                print(mseg)
+            except Exception:
+                print('NULL')
 
 
 Y_1 = Test_Class_1()
 Y_2 = Test_Class_2()
 
-Y = Combo_Class(Y_1, Y_2)
+Y = Combo_Class(Test_Class_1, Test_Class_2)
 print(Y.combo)
-imp_Y_1 = m1.Export_Object.Import_Object(Y)
