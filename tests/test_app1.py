@@ -8,19 +8,19 @@ try:
     # print(sys.path)
     sys.path.insert(1, '')
     # print('in first import block')
-    import src.app1.package1.module1 as module1
-    import src.app1.package1.module2 as module2
-    import src.app1.package2.module1 as module1_m2
-    import src.app1.package2.module2 as module2_m2
+    import src.app1.package1.module1 as m1_p1
+    import src.app1.package1.module2 as m2_p1
+    import src.app1.package2.module1 as m1_p2
+    import src.app1.package2.module2 as m2_p2
     #print('Direct execution of the test')
 except ImportError:
     # print(sys.path)
     sys.path.insert(1, '../')
     # print('in second import block')
-    import src.app1.package1.module1 as module1
-    import src.app1.package1.module2 as module2
-    import src.app1.package2.module1 as module1_m2
-    import src.app1.package2.module2 as module2_m2
+    import src.app1.package1.module1 as m1_p1
+    import src.app1.package1.module2 as m2_p1
+    import src.app1.package2.module1 as m1_p2
+    import src.app1.package2.module2 as m2_p2
     #print('Execution of the script from tests/ dir')
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
@@ -30,23 +30,23 @@ class Test_Package1_Module1:
 
     @staticmethod
     def test_sayhi():
-        x = module1.Class_Script.Say_Hi()
+        x = m1_p1.Class_Script.Say_Hi()
         try:
             assert x != 0
         except AssertionError:
-            print(f'{module1.Class_Script.Say_Hi.__name__}: Failed ❌')
+            print(f'{m1_p1.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print(f'{module1.Class_Script.Say_Hi.__name__}: Success ✅')
+            print(f'{modm1_p1ule1.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_showtime():
-        x = module1.Class_Script.Show_Time('Test')
+        x = m1_p1.Class_Script.Show_Time('Test')
         try:
             assert x != 0
         except AssertionError:
-            print(f'{module1.Class_Script.Show_Time.__name__}: Failed ❌')
+            print(f'{m1_p1.Class_Script.Show_Time.__name__}: Failed ❌')
         else:
-            print(f'{module1.Class_Script.Show_Time.__name__}: Success ✅')
+            print(f'{m1_p1.Class_Script.Show_Time.__name__}: Success ✅')
 
     @staticmethod
     def test_computeterms():
@@ -55,12 +55,12 @@ class Test_Package1_Module1:
         # a list that contains a string will fail the procedure, since the compute function only takes numbers
         test_bad_list = [1, 2, 3, 'a']
         try:
-            x = module1.Class_Script.Compute_Term(test_good_list)
+            x = m1_p1.Class_Script.Compute_Term(test_good_list)
             assert x != 0
         except AssertionError:
-            print(f'{module1.Class_Script.Compute_Term.__name__}: Failed ❌')
+            print(f'{m1_p1.Class_Script.Compute_Term.__name__}: Failed ❌')
         else:
-            print(f'{module1.Class_Script.Compute_Term.__name__}: Success ✅')
+            print(f'{m1_p1.Class_Script.Compute_Term.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
@@ -73,43 +73,43 @@ class Test_Package1_Module2:
 
     @staticmethod
     def test_sayhi():
-        x = module2.Class_Script.Say_Hi()
+        x = m2_p1.Class_Script.Say_Hi()
         try:
             assert x != 0
         except AssertionError:
-            print(f'{module2.Class_Script.Say_Hi.__name__}: Failed ❌')
+            print(f'{m2_p1.Class_Script.Say_Hi.__name__}: Failed ❌')
         else:
-            print(f'{module2.Class_Script.Say_Hi.__name__}: Success ✅')
+            print(f'{m2_p1.Class_Script.Say_Hi.__name__}: Success ✅')
 
     @staticmethod
     def test_showlocation():
-        x = module2.Class_Script.Show_Location('test')
+        x = m2_p1.Class_Script.Show_Location('test')
         try:
             assert x != 0
         except AssertionError:
-            print(f'{module2.Class_Script.Show_Location.__name__}: Failed ❌')
+            print(f'{m2_p1.Class_Script.Show_Location.__name__}: Failed ❌')
         else:
-            print(f'{module2.Class_Script.Show_Location.__name__}: Success ✅')
+            print(f'{m2_p1.Class_Script.Show_Location.__name__}: Success ✅')
 
     @staticmethod
     def test_showsysteminfo():
-        x = module2.Class_Script.Show_System_Info('MACBOOK-PRO')
+        x = m2_p1.Class_Script.Show_System_Info('MACBOOK-PRO')
         try:
             assert x != 0
         except AssertionError:
-            print(f'{module2.Class_Script.Show_System_Info.__name__}: Failed ❌')
+            print(f'{m2_p1.Class_Script.Show_System_Info.__name__}: Failed ❌')
         else:
-            print(f'{module2.Class_Script.Show_System_Info.__name__}: Success ✅')
+            print(f'{m2_p1.Class_Script.Show_System_Info.__name__}: Success ✅')
 
     @staticmethod
     def test_giverandomarray():
-        x = module2.Class_Script.Give_Random_Array(1)
+        x = m2_p1.Class_Script.Give_Random_Array(1)
         try:
             assert len(x) > 0
         except AssertionError:
-            print(f'{module2.Class_Script.Give_Random_Array.__name__}: Failed ❌')
+            print(f'{m2_p1.Class_Script.Give_Random_Array.__name__}: Failed ❌')
         else:
-            print(f'{module2.Class_Script.Give_Random_Array.__name__}: Success ✅')
+            print(f'{m2_p1.Class_Script.Give_Random_Array.__name__}: Success ✅')
 
     @staticmethod
     def Start_Test():
