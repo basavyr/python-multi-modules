@@ -4,7 +4,7 @@ from src.app1.package2 import module2
 import os
 
 import sys
-print(f'module1/package2 -> {sys.path}')
+# print(f'module1/package2 -> {sys.path}')
 
 
 # try/except block for importing the script1
