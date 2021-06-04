@@ -18,6 +18,16 @@ class Class_Script:
         assert len(x) == len(y), 'Arrays do not have the same length'
         return x, y
 
+    @staticmethod
+    def Combo_Function():
+        try:
+            x_1 = Class_Script.Test()
+            x_2 = Class_Script.Extra_Test()
+        except Exception:
+            return -1
+        else:
+            return 1
+
 
 def Main():
     print(Class_Script.Test())
