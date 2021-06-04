@@ -11,7 +11,7 @@ class Plot_Maker:
         try:
             op_x = np.sqrt(argx)
         except Exception:
-            op_x = np.sqrt(abs(argx))
+            op_x = 0
 
         return op_x
 

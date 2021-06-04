@@ -21,7 +21,13 @@ finally:
 class Test_Package1_Module2:
     @staticmethod
     def test_operation():
-        module2_p1.Module2_Test()
+        try:
+            x = module2_p1.Plot_Maker.Operation(10)
+            assert x != 0
+        except AssertionError:
+            print(f'Test failed | ❌')
+        else:
+            print(f'Test passed | ✅')
 
     @staticmethod
     def Start_Test():
