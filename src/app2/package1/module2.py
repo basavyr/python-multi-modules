@@ -26,7 +26,7 @@ class Plot_Maker:
         try:
             assert len(data_set) > 0
         except AssertionError:
-            return -1
+            return None
 
         # define the mathematical operation to apply on the input data set
         f_data_set = list(map(Plot_Maker.Operation, data_set))

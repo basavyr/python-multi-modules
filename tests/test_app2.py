@@ -19,6 +19,7 @@ finally:
 
 
 class Test_Package1_Module2:
+
     @staticmethod
     def test_operation():
         try:
@@ -32,8 +33,21 @@ class Test_Package1_Module2:
                 f'Test: {Test_Package1_Module2.test_operation.__name__} @ {datetime.utcnow()}: ✅')
 
     @staticmethod
+    def test_mathfunction():
+        try:
+            x = module2_p1.Plot_Maker.Math_Function([1, 2, 3])
+            assert type(x) != 0
+        except AssertionError:
+            print(
+                f'Test: {Test_Package1_Module2.test_mathfunction.__name__} @ {datetime.utcnow()}: ❌')
+        else:
+            print(
+                f'Test: {Test_Package1_Module2.test_mathfunction.__name__} @ {datetime.utcnow()}: ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Package1_Module2.test_operation()
+        Test_Package1_Module2.test_mathfunction()
 
 
 class Test_Package2_Module1:
@@ -60,7 +74,7 @@ class Test_Package2_Module2:
     def test_givearray():
         try:
             x = module2_p2.Class_Script.Give_Array()
-            assert x != None, 'Assertion failed'
+            assert type(x) != None
         except AssertionError:
             print(
                 f'Test: {Test_Package2_Module2.test_givearray.__name__} @ {datetime.utcnow()}: ❌')
@@ -87,8 +101,10 @@ class Test_Package2_Module2:
 
 
 def Main():
+    # Test_Package1_Module1.Start_Test()
     Test_Package1_Module2.Start_Test()
-    Test_Package2_Module2.Start_Test()
+    # Test_Package2_Module1.Start_Test()
+    # Test_Package2_Module2.Start_Test()
 
 
 if __name__ == '__main__':
