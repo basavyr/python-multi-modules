@@ -16,6 +16,12 @@ finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
 
+class Test_Package1_Module2:
+    @staticmethod
+    def test_operation():
+        return 1
+
+
 class Test_Package2_Module1:
 
     @staticmethod
