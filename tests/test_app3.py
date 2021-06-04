@@ -121,11 +121,16 @@ function_getter = lambda obj: m1.Export_Object.Get_Functions(obj)
 
 
 def Main():
-    functions = function_getter(Test_Class_2())
-
-    print(f'Functions in {Test_Class_2.__name__}')
-    for fct in functions:
-        print(fct[0])
+    try:
+        functions = function_getter(Test_Class_2())
+        assert len(functions) == 4
+    except AssertionError:
+        print('App-3 failed ❌')
+    else:
+        print('App-3 works ✅')
+    # print(f'Functions in {Test_Class_2.__name__}')
+    # for fct in functions:
+    #     print(fct[0])
 
 
 if __name__ == '__main__':
