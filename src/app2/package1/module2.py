@@ -25,3 +25,18 @@ class Plot_Maker:
         # define the mathematical operation to apply on the input data set
         f_data_set = list(map(Plot_Maker.Operation, data_set))
         return f_data_set
+
+    @staticmethod
+    def Create_Data_Set():
+        x_data_set = np.arange(0, 110, 10)
+        fx_data_set = Plot_Maker.Math_Function(x_data_set)
+        return [x_data_set, fx_data_set]
+
+
+def Main():
+    x = Plot_Maker.Create_Data_Set()
+    print(x)
+
+
+if __name__ == '__main__':
+    Main()

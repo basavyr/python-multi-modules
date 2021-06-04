@@ -42,6 +42,7 @@ def Main():
 
 
 if __name__ == '__main__':
-    Main()
-    branch_name = 'test-apps'
-    print(f'From brach -> {branch_name}')
+    # Main()
+    # branch_name = 'test-apps'
+    # print(f'From brach -> {branch_name}')
+    m2_p1.Main()

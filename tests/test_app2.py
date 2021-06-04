@@ -25,9 +25,11 @@ class Test_Package1_Module2:
             x = module2_p1.Plot_Maker.Operation(10)
             assert x != 0
         except AssertionError:
-            print(f'Test failed | ❌')
+            print(
+                f'Test: {Test_Package1_Module2.test_operation.__name__} @ {datetime.utcnow()}: ❌')
         else:
-            print(f'Test passed | ✅')
+            print(
+                f'Test: {Test_Package1_Module2.test_operation.__name__} @ {datetime.utcnow()}: ✅')
 
     @staticmethod
     def Start_Test():
