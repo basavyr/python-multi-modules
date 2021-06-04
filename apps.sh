@@ -11,7 +11,10 @@
 # python src/app1/package2/module2.py
 
 echo 'Running App-2 🚀'
-
-echo 'Package-1 📦'
+echo 
+echo 'Package-2 📦'
+echo 
+echo 'Module-1 📚'
 python src/app2/package2/module1.py
+echo 'Module-2 📚'
 python src/app2/package2/module2.py
