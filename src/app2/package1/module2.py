@@ -34,9 +34,14 @@ class Plot_Maker:
 
     @staticmethod
     def Create_Data_Set():
-        x_data_set = np.arange(0, 110, 10)
-        fx_data_set = Plot_Maker.Math_Function(x_data_set)
-        return [x_data_set, fx_data_set]
+        try:
+            x_data_set = np.arange(0, 110, 10)
+            fx_data_set = Plot_Maker.Math_Function(x_data_set)
+        except Exception:
+            result = [None, None]
+        else:
+            result = [x_data_set, fx_data_set]
+        return result
 
 
 def Main():

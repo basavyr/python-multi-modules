@@ -45,9 +45,22 @@ class Test_Package1_Module2:
                 f'Test: {Test_Package1_Module2.test_mathfunction.__name__} @ {datetime.utcnow()}: ✅')
 
     @staticmethod
+    def test_createdataset():
+        try:
+            x = module2_p1.Plot_Maker.Create_Data_Set()
+            assert type(x[0]) != None and type(x[1]) != None
+        except AssertionError:
+            print(
+                f'Test: {Test_Package1_Module2.test_createdataset.__name__} @ {datetime.utcnow()}: ❌')
+        else:
+            print(
+                f'Test: {Test_Package1_Module2.test_createdataset.__name__} @ {datetime.utcnow()}: ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Package1_Module2.test_operation()
         Test_Package1_Module2.test_mathfunction()
+        Test_Package1_Module2.test_createdataset()
 
 
 class Test_Package2_Module1:
