@@ -1,9 +1,16 @@
 version: "3"
 services:
-    docker-app:
+    test-apps:
+        build: 
+            context: .
+            dockerfile: ./docker-test/Dockerfile
+        container_name: test_apps
+        volumes:
+            - ./:/home/basavyr
+    run-apps:
         build: 
             context: .
             dockerfile: ./docker-app/Dockerfile
-        container_name: multi_app
+        container_name: run_apps
         volumes:
             - ./:/home/basavyr
