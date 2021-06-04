@@ -8,8 +8,7 @@ class Class_Script:
 
     @staticmethod
     def Test():
-        mseg = f'function {Class_Script.Test.__name__}() from  {os.path.basename(__file__)} inside Module-1'
-        # print(mseg)
+        mseg = f'function {Class_Script.Test.__name__}() from  {os.path.basename(__file__)} inside Package-1'
         return mseg
 
     @staticmethod
@@ -21,7 +20,7 @@ class Class_Script:
 
 
 def Main():
-    Class_Script.Test()
+    print(Class_Script.Test())
 
 
 if __name__ == '__main__':

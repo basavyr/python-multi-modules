@@ -3,14 +3,22 @@
 import os
 import platform
 from datetime import datetime
+import sys
+
+# uses an external module, from package 1
+try:
+    from src.app2.package2 import module1 as m1
+except ModuleNotFoundError:
+    sys.path.insert(1, '')
+    from src.app2.package2 import module1 as m1
 
 
 class Class_Script:
+
     @staticmethod
     def Give_Array():
         try:
-            new_array = [os.path.relpath(__file__)]
-            new_array.append(os.path.basename(__file__))
+            new_array = [1, 2, 3]
         except Exception:
             return None
         else:
@@ -25,10 +33,22 @@ class Class_Script:
         else:
             return message
 
+    @staticmethod
+    def Test_Module2():
+        sub_test1 = Class_Script.Give_Array()
+        sub_test2 = Class_Script.Get_Time()
+        try:
+            assert sub_test1 != None and sub_test2 != None
+        except AssertionError:
+            mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ❌ Bad imports'
+        else:
+            mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ✅ Successfull imports'
+
+        return mseg
+
 
 def Main():
-    print(Class_Script.Give_Array())
-    print(Class_Script.Get_Time())
+    print(Class_Script.Test_Module2())
 
 
 if __name__ == '__main__':

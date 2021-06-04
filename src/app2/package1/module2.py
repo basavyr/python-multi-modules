@@ -2,9 +2,15 @@
 
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 
 class Plot_Maker:
+
+    @staticmethod
+    def Test():
+        mseg = f'function {Plot_Maker.Test.__name__}() from  {os.path.basename(__file__)} inside Package-1'
+        return mseg
 
     @staticmethod
     def Operation(argx):
@@ -34,8 +40,7 @@ class Plot_Maker:
 
 
 def Main():
-    x = Plot_Maker.Create_Data_Set()
-    print(x)
+    print(Plot_Maker.Test())
 
 
 if __name__ == '__main__':
