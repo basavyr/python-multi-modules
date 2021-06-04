@@ -177,3 +177,5 @@ def Main():
 
 if __name__ == '__main__':
     Main()
+    # create a plot with the module 2 from package 1
+    module2_p1.Plot_Maker.Make_Plot('here.pdf')

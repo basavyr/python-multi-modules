@@ -43,6 +43,36 @@ class Plot_Maker:
             result = [x_data_set, fx_data_set]
         return result
 
+    @staticmethod
+    def Make_Plot(plot_file):
+        do_plot = 0
+
+        try:
+            data = Plot_Maker.Create_Data_Set()
+            assert type(data[0]) != None and type(data[1]) != None
+        except AssertionError:
+            do_plot = 0
+        else:
+            do_plot = 1
+
+        x = data[0]
+        y = data[1]
+
+        if(do_plot):
+            try:
+                plt.plot(x, y, '-or', label=r'f(x)')
+                plt.legend(loc='best')
+                plt.xlabel(r'x')
+                plt.ylabel(r'f(x)')
+                plt.savefig(plot_file, bbox_inches='tight')
+                plt.close()
+            except Exception:
+                return -1
+            else:
+                return 1
+        else:
+            return -1
+
 
 def Main():
     print(Plot_Maker.Test())

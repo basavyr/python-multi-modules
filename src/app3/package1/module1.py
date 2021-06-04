@@ -40,7 +40,6 @@ class Export_Object:
 
 def Main():
     test_object = ['a string', f'a number -> {4}']
-    fake_test = None
     try:
         x = Export_Object.Import_Object(test_object)
         y = Export_Object.Get_Classes(test_object)
