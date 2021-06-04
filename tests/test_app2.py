@@ -1,5 +1,6 @@
 from datetime import datetime
 import sys
+import os
 
 app = 'App-2'
 
@@ -78,10 +79,30 @@ class Test_Package1_Module2:
                 f'Test: {Test_Package1_Module2.test_createdataset.__name__} @ {datetime.utcnow()}: ✅')
 
     @staticmethod
+    def test_plotmaker():
+        plot_file = 'test_plot_here.pdf'
+        try:
+            do_plot = module2_p1.Plot_Maker.Make_Plot(plot_file)
+            assert do_plot != -1
+        except AssertionError:
+            print('Failed plotting the data_set ❌')
+        else:
+            print('Plotting function finished ✅')
+
+        try:
+            plot_size = os.stat(plot_file).st_size
+            assert plot_size > 0
+        except AssertionError:
+            print('Plot file is not good ❌')
+        else:
+            print('Plot file is OK ✅')
+
+    @staticmethod
     def Start_Test():
         Test_Package1_Module2.test_operation()
         Test_Package1_Module2.test_mathfunction()
         Test_Package1_Module2.test_createdataset()
+        Test_Package1_Module2.test_plotmaker()
 
 
 class Test_Package2_Module1:
@@ -177,5 +198,3 @@ def Main():
 
 if __name__ == '__main__':
     Main()
-    # create a plot with the module 2 from package 1
-    module2_p1.Plot_Maker.Make_Plot('here.pdf')
