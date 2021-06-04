@@ -8,10 +8,10 @@ import sys
 
 # uses an external module, from package 1
 try:
-    from src.app2.package1 import module2 as m2
+    from src.app2.package1 import module1 as m1
 except ModuleNotFoundError:
-    # sys.path.insert(1, '../package1')
-    import module2 as m2
+    sys.path.insert(1, '../')
+    from package1 import module1 as m1
 
 
 class Class_Script:
@@ -27,8 +27,7 @@ class Class_Script:
 
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Module-2'
-    print(f'Successfully imported module -> {dir(m2)}')
-    print(message)
+    print(f'Successfully imported module -> {dir(m1)}')
 
 
 if __name__ == '__main__':
