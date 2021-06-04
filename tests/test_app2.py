@@ -1,7 +1,7 @@
 from datetime import datetime
 import sys
 import os
-
+import time
 app = 'App-2'
 
 
@@ -80,9 +80,10 @@ class Test_Package1_Module2:
 
     @staticmethod
     def test_plotmaker():
+        test_dir = './tests/'
         plot_file = 'test_plot_here.pdf'
         try:
-            do_plot = module2_p1.Plot_Maker.Make_Plot(plot_file)
+            do_plot = module2_p1.Plot_Maker.Make_Plot(test_dir + plot_file)
             assert do_plot != -1
         except AssertionError:
             print('Failed plotting the data_set ❌')
@@ -90,12 +91,17 @@ class Test_Package1_Module2:
             print('Plotting function finished ✅')
 
         try:
-            plot_size = os.stat(plot_file).st_size
+            plot_size = os.stat(test_dir + plot_file).st_size
             assert plot_size > 0
         except AssertionError:
             print('Plot file is not good ❌')
         else:
             print('Plot file is OK ✅')
+            # time.sleep(2)
+            try:
+                os.remove(test_dir + plot_file)
+            except OSError:
+                pass
 
     @staticmethod
     def Start_Test():
