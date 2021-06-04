@@ -24,8 +24,4 @@ class Plot_Maker:
 
         # define the mathematical operation to apply on the input data set
         f_data_set = list(map(Plot_Maker.Operation, data_set))
-        return data_set
-
-
-def Module2_Test():
-    print('module2 -> package1')
+        return f_data_set
