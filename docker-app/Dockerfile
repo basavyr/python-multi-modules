@@ -14,5 +14,5 @@ RUN pip install -r requirements.txt
 
 COPY . . 
 
-CMD ["python","./tests/test_app3.py"]
-# CMD ["/bin/bash","./tests.sh"]
+# CMD ["python","./tests/test_app3.py"]
+CMD ["/bin/bash","./apps.sh"]
