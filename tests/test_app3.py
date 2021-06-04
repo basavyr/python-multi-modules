@@ -128,9 +128,6 @@ def Main():
         print('App-3 failed ❌')
     else:
         print('App-3 works ✅')
-    # print(f'Functions in {Test_Class_2.__name__}')
-    # for fct in functions:
-    #     print(fct[0])
 
 
 if __name__ == '__main__':
