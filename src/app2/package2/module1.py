@@ -17,6 +17,12 @@ except ModuleNotFoundError:
 
 
 class Class_Script:
+
+    @staticmethod
+    def Test():
+        mseg = f'function {Class_Script.Test.__name__}() from  {os.path.basename(__file__)} inside Package-1'
+        return mseg
+
     @staticmethod
     def Give_Array():
         try:
@@ -29,14 +35,7 @@ class Class_Script:
 
 def Main():
     message = f'This is {os.path.basename(__file__)} script from Package-2'
-    print(f'Successfully imported module -> {dir(m2_p1)}')
     print(message)
-    try:
-        x=m1_app3.Export_Object.Get_Functions(m2_p1)
-    except Exception:
-        print(-1)
-    else:
-        print(x)
 
 
 if __name__ == '__main__':
