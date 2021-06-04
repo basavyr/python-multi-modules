@@ -141,10 +141,23 @@ class Test_Package2_Module2:
             print(
                 f'Test: {Test_Package2_Module2.test_gettime.__name__} @ {datetime.utcnow()}: ✅')
 
+    @staticmethod
+    def test_embedded_module():
+        try:
+            x = module2_p2.Class_Script.Test_Module2()
+            assert type(x) != None
+        except AssertionError:
+            print(
+                f'Test: {Test_Package2_Module2.test_embedded_module.__name__} @ {datetime.utcnow()}: ❌')
+        else:
+            print(
+                f'Test: {Test_Package2_Module2.test_embedded_module.__name__} @ {datetime.utcnow()}: ✅')
+
     @ staticmethod
     def Start_Test():
         Test_Package2_Module2.test_givearray()
         Test_Package2_Module2.test_gettime()
+        Test_Package2_Module2.test_embedded_module()
 
 
 def Main():
@@ -159,7 +172,7 @@ def Main():
     print(f'\n⚙️ Testing Module-1...\n')
     Test_Package2_Module1.Start_Test()
     print(f'\n⚙️ Testing Module-2...\n')
-    # Test_Package2_Module2.Start_Test()
+    Test_Package2_Module2.Start_Test()
 
 
 if __name__ == '__main__':

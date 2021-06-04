@@ -44,8 +44,10 @@ class Class_Script:
                 sub_test2) != type(None)
         except AssertionError:
             mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ❌ Bad imports'
+            return None
         else:
             mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ✅ Successfull imports'
+            # return None
 
         return mseg
 
