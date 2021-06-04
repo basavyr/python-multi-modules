@@ -32,12 +32,16 @@ def Main():
     print(f'Successfully imported module -> {dir(m2_p1)}')
     print(message)
     try:
-        x=m1_app3.Export_Object.Get_Functions(m2_p1)
+        x = m1_app3.Export_Object.Get_Classes(m2_p1)
+        y = m1_app3.Export_Object.Get_Functions(m2_p1.Plot_Maker)
     except Exception:
         print(-1)
     else:
-        print(x)
+        print(f'x -> {x}')
+        print(f'x -> {y}')
 
 
 if __name__ == '__main__':
     Main()
+    branch_name = 'test-apps'
+    print(f'From brach -> {branch_name}')
