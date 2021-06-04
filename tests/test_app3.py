@@ -114,3 +114,19 @@ class Combo_Class:
 
     def Show_Container(self):
         return self.container
+
+
+class_getter = lambda obj: m1.Export_Object.Get_Classes(obj)
+function_getter = lambda obj: m1.Export_Object.Get_Functions(obj)
+
+
+def Main():
+    functions = function_getter(Test_Class_2())
+
+    print(f'Functions in {Test_Class_2.__name__}')
+    for fct in functions:
+        print(fct[0])
+
+
+if __name__ == '__main__':
+    Main()
