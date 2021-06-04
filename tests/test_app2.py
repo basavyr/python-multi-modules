@@ -8,10 +8,12 @@ try:
     sys.path.insert(1, '')
     from src.app2.package2 import module1 as module1_p2
     from src.app2.package2 import module2 as module2_p2
+    from src.app2.package1 import module2 as module2_p1
 except ModuleNotFoundError:
     sys.path.insert(1, '../')
     from src.app2.package2 import module1 as module1_p2
     from src.app2.package2 import module2 as module2_p2
+    from src.app2.package1 import module2 as module2_p1
 finally:
     print(f'\nImporting modules from {app} -> OK ✅\n')
 
@@ -19,7 +21,11 @@ finally:
 class Test_Package1_Module2:
     @staticmethod
     def test_operation():
-        return 1
+        module2_p1.Module2_Test()
+
+    @staticmethod
+    def Start_Test():
+        Test_Package1_Module2.test_operation()
 
 
 class Test_Package2_Module1:
@@ -73,6 +79,7 @@ class Test_Package2_Module2:
 
 
 def Main():
+    Test_Package1_Module2.Start_Test()
     Test_Package2_Module2.Start_Test()
 
 
