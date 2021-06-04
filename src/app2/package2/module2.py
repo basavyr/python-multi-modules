@@ -18,7 +18,9 @@ class Class_Script:
     @staticmethod
     def Give_Array():
         try:
-            new_array = [1, 2, 3]
+            # receive an array from module 1
+            test_array = [1, 2, 'test']
+            new_array = m1.Class_Script.Give_Array()
         except Exception:
             return None
         else:
@@ -36,15 +38,21 @@ class Class_Script:
     @staticmethod
     def Test_Module2():
         sub_test1 = Class_Script.Give_Array()
-        sub_test2 = Class_Script.Get_Time()
+        sub_test2 = None
         try:
-            assert sub_test1 != None and sub_test2 != None
+            assert type(sub_test1) != type(None) and type(
+                sub_test2) != type(None)
         except AssertionError:
-            mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ❌ Bad imports'
-        else:
-            mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ✅ Successfull imports'
+            print('Invalid type')
+        # try:
+        #     assert all(sub_test1) and all(sub_test2)
+        # except AssertionError as asserter:
+        #     print(asserter)
+        #     mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ❌ Bad imports'
+        # else:
+        #     mseg = f'This is {os.path.basename(__file__)} inside Package-2 | ✅ Successfull imports'
 
-        return mseg
+        return 1
 
 
 def Main():
