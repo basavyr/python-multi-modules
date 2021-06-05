@@ -19,7 +19,9 @@ jobs:
       run: sudo apt-get install zip gzip tar
     - name: Create app archive 📦
       run: |
-        zip -r apps.zip src/
+        zip -r app1.zip src/app1
+        zip -r app2.zip src/app2
+        zip -r app3.zip src/app3
     - name: Create release with artifact
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
@@ -28,4 +30,6 @@ jobs:
         prerelease: false
         title: "App ⭐️"
         files: |
-          apps.zip
+          app1.zip
+          app2.zip
+          app3.zip
